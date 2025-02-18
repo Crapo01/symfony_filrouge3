@@ -16,7 +16,7 @@ final class UserController extends AbstractController
 {
     #[Route('/api/login_signin', name:"createUser", methods: ['POST'])]
 
-    public function createBook(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, UserPasswordHasherInterface $userPasswordHasher): JsonResponse 
+    public function createUser(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, UserPasswordHasherInterface $userPasswordHasher): JsonResponse 
 
     {        
         $user = $serializer->deserialize($request->getContent(), User::class, 'json');        
